@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-code"></i> Web Code Editor</h1>
+            <div class="controls">
+                <button id="theme-toggle"><i class="fas fa-moon"></i> Dark Mode</button>
+                <button id="run-code"><i class="fas fa-play"></i> Run</button>
+                <button id="download-code"><i class="fas fa-download"></i> Export</button>
+                <button id="clear-code"><i class="fas fa-trash"></i> Clear</button>
+            </div>
+        </header>
+        
+        <div class="editor-container">
+            <div class="code-editors">
+                <div class="editor-tabs">
+                    <button class="tab-btn active" data-tab="html">HTML</button>
+                    <button class="tab-btn" data-tab="css">CSS</button>
+                    <button class="tab-btn" data-tab="js">JavaScript</button>
+                </div>
+                
+                <div class="editor-content">
+                    <div class="editor-section active" id="html-editor">
+                        <textarea id="html-code" placeholder="Write your HTML here..."><!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>This is a live web editor.</p>
+    <button id="demo-btn">Click Me</button>
+</body>
+</html></textarea>
+                    </div>
+                    
+                    <div class="editor-section" id="css-editor">
+                        <textarea id="css-code" placeholder="Write your CSS here...">body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #4a6fa5;
+}
+
+#demo-btn {
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}</textarea>
+                    </div>
+                    
+                    <div class="editor-section" id="js-editor">
+                        <textarea id="js-code" placeholder="Write your JavaScript here...">document.getElementById('demo-btn').addEventListener('click', function() {
+    alert('Button clicked!');
+});</textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-section">
+                <div class="preview-header">
+                    <span><i class="fas fa-eye"></i> Preview</span>
+                </div>
+                <iframe id="preview-frame"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
